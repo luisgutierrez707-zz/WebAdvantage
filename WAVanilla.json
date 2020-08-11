@@ -42,7 +42,7 @@
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "publicIPAddressName": "WebAdvantageIPAddress",
-    "vmName": "parameters('dnsLabelPrefix')]",
+    "vmName": "[parameters('dnsLabelPrefix')]",
     "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
     "networkSecurityGroupName": "WebAdvantageNSG"
