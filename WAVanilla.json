@@ -200,6 +200,13 @@
                         "sku": "wadnn96",
                         "version": "latest"
                     },
+                    "osDisk": {
+                        "createOption": "fromImage",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS"
+                        }
+                    },
+                    
           "networkProfile": {
             "networkInterfaces": [
               {
