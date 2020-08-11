@@ -219,7 +219,7 @@
     "outputs": {
       "DNN IP Address": {
         "type": "string",
-        "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))).IpAddress]",
+        "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))).IpAddress]"
 
       }
     }
