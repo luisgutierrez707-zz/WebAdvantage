@@ -4,7 +4,7 @@
     "parameters": {
       "adminUsername": {
         "type": "string",
-        "defaultValue": "DNNAdmin"
+        "defaultValue": "DNNAdmin",
         "metadata": {
           "description": "Username for your DNN Server. You will use this to RDP into your server. Example: DNNAdmin"
         }
