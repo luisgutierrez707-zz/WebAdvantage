@@ -4,20 +4,21 @@
     "parameters": {
       "adminUsername": {
         "type": "string",
+        "defaultValue": "DNNAdmin"
         "metadata": {
-          "description": "Username for your DNN Server, EG dnnAdmin"
+          "description": "Username for your DNN Server. You will use this to RDP into your server. Example: DNNAdmin"
         }
       },
       "adminPassword": {
         "type": "securestring",
         "metadata": {
-          "description": "Password for the Virtual Machine. Use something Secure!"
+          "description": "Password for your DNN Server. You will use this to remote connect into your server. Example: P4$$W0RD"
         }
       },
       "dnsLabelPrefix": {
         "type": "string",
         "metadata": {
-          "description": "DNS Name for your site. EG WebAdvantageSITE"
+          "description": "DNS Name for your site. We will automatically create a DNS label for you. You can then use this URL to access your website. Example: WebAdvantageSITE"
         }
       },
       "vmSize": {
@@ -31,7 +32,7 @@
         "type": "string",
         "defaultValue": "[resourceGroup().location]",
         "metadata": {
-          "description": "Which Datacenter you'd like to deploy to."
+          "description": "Which Datacenter you'd like to deploy to. We will automatically choose a location based on ResourceGroup Location."
         }
       }
     },
@@ -216,9 +217,10 @@
       }
     ],
     "outputs": {
-      "hostname": {
+      "DNN IP Address": {
         "type": "string",
-        "value": "[reference(variables('publicIPAddressName')).dnsSettings.fqdn]"
+        "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))).IpAddress]",
+
       }
     }
 }
